@@ -22,7 +22,7 @@ let arr =  ['Ваня', 'Петя',];
 let newArr = arr;
 newArr.push('Оля');
 newArr[1] = 'Коля';
-let removed = newArr.splice(0,1);
+let removed = newArr.shift();
 console.log(removed);
 newArr.splice(0,0,'Маша','Паша',);
 console.log(newArr);
