@@ -211,3 +211,53 @@ const strings = ["кришна", "кришна", "харе", "харе",
 const unique = (array) => array.filter((item, index) => array.indexOf(item) === index);
 unique(strings);
 console.log(unique(strings));
+
+// Задача. Есть массив объектов,у каждого из объектов есть цена и название товара.
+//     Нужно получить новый массив , в объектах которого название товара начинается на "а"
+// и цена  равна от 100 до 500.
+
+const minPrice = 100
+const maxPrice = 500
+
+const goods = [
+ { name: "ананас", price: 250 },
+ { name: "арбуз", price: 90 },
+ { name: "виноград", price: 120 },
+ { name: "манго", price: 550},
+]
+
+let filter = (array, a, b) => array.filter(item =>(a <= item.price && item.price <= b));
+let filteredPrice = filter(goods, 100, 500);
+const filtredGoods = filteredPrice.filter( item => item.name[0] === 'а')
+console.log(filtredGoods);
+
+
+// const filtered1 = goods.filter(el => el.name[0] ==='а' && el.price>=100 && el.price<=500)
+// console.log(filtered1)
+//
+// const fil2 = goods
+//     .filter(el => el.name[0] ==='а')
+//     .filter(el => el.price>= minPrice && el.price <= maxPrice)
+// console.log(fil2)
+console.log('----------------------');
+
+const order = [4, 2, 3, 1]
+const peoples = [
+ {id: 2, name: 'Andrei'},
+ {id: 1, name: 'Vasya'},
+ {id: 4, name: 'Vlad'},
+ {id: 3, name: 'Serhei'},
+]
+const peoplesOrder = []
+for (let i = 0; i < order.length; i++) {
+ for (let j = 0; j < peoples.length; j++) {
+  if (order[i] === peoples[j].id) {
+  peoplesOrder.push(peoples[j]);
+
+  }
+ }
+}
+console.log(peoplesOrder);
+
+// const newArr = order.map((order) => peoples.find((peoples) => peoples.id === order))
+// console.log(newArr);
