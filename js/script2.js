@@ -120,11 +120,7 @@ isEmpty(schedule);
 // Задача.У нас есть объект, в котором хранятся зарплаты нашей команды:
 //     Напишите код для суммирования всех зарплат и сохраните результат в переменной sum. Должно получиться 390.
 //     Если объект salaries пуст, то результат должен быть 0.
-//     let salaries = {
-//         John: 100,
-//         Ann: 160,
-//         Pete: 130
-//     }
+
 
 let salaries = {
     John: 100,
@@ -203,16 +199,46 @@ let calculator = {
     mul() {
         return this.a * this.b;
     },
-
-
-
-
 }
 calculator.read();
 console.log(calculator.sum());
 console.log(calculator.mul());
 
+console.log('----------------------');
 
+// задача.Есть объект salaries с произвольным количеством свойств, содержащих заработные платы.
+// Напишите функцию sumSalaries(salaries), которая возвращает сумму всех зарплат с помощью метода Object.values и цикла for..of.
+// Если объект salaries пуст, то результат должен быть 0.
 
+let salaries1 = {
+    "John": 100,
+    "Pete": 300,
+    "Mary": 250
+};
+let sumSalaries1 = (salaries1) => {
+    let sum = 0
+    for(let sumVal of Object.values(salaries1) ) {
+         sum += sumVal
+    }
+    return sum;
+}
+console.log(sumSalaries1(salaries1));
 
+console.log('----------------------');
 
+// Задача.Напишите функцию count(obj), которая возвращает количество свойств объекта:
+//
+//     let user = {
+//         name: 'John',
+//         age: 30
+//     };
+//
+// alert( count(user) ); // 2
+// Постарайтесь сделать код как можно короче.
+
+let user10 = {
+    name: 'John',
+    age: 30
+};
+const count = (obj) => Object.keys(obj).length
+console.log(count(user10));
