@@ -96,6 +96,7 @@ console.log('----------------------');
 // которые находятся между a и b. То есть, проверка имеет вид a ≤ arr[i] ≤ b.
 // Функция должна изменять принимаемый массив и ничего не возвращать.
 
+let fara = [5, 3, 8, 1];
 
 let filterRangeInPlace = (fara, a, b ) => {
 
@@ -108,7 +109,7 @@ let filterRangeInPlace = (fara, a, b ) => {
  }
 }
 
-let fara = [5, 3, 8, 1];
+
  filterRangeInPlace(fara,1, 4);
 console.log(fara);
 
@@ -264,3 +265,25 @@ console.log(peoplesOrder);
 
 // const newArr = order.map((order) => peoples.find((peoples) => peoples.id === order))
 // console.log(newArr);
+
+
+const peoples2 = [
+ {id: 1, name: 'Vasya', salary: 250},
+ {id: 2, name: 'Jenya', salary: 800},
+ {id: 3, name: 'Vlad', salary: 900},
+ {id: 4, name: 'Andrei', salary: 120},
+ {id: 5, name: 'Romam', salary: 1050},
+ {id: 6, name: 'Vasya1', salary: 9000},
+]    //    ['Vasya1', 'Romam', 'Vlad', 'Jenya']
+
+//
+// const filtred1 = peoples2.filter(item => item.salary >= 300);
+// const filtred2 = filtred1.sort((a , b) => b.salary - a.salary )
+// console.log(filtred2);
+// const filtred3 = filtred2.map(item =>item.name);
+
+const filtred = peoples2
+    .filter(item => item.salary >= 300)
+    .sort((a , b) => b.salary - a.salary)
+    .map(item => item.name)
+console.log(filtred);
